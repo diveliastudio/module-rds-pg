@@ -7,14 +7,12 @@ variable "project_environment" {
 variable "initial_db_name" {
 }
 
+variable "source_security_group_id" {
+}
+
 variable "engine_version" {
   type = string
   default = "12.9"
-}
-
-variable "sg_cidr_blocks" {
-  type = list(string)
-  default = ["0.0.0.0/0"]
 }
 
 variable "instance_class" {
