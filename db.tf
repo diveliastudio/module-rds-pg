@@ -9,9 +9,11 @@ resource "aws_db_instance" "db_rds_pg" {
   engine = "postgres"
   engine_version = var.engine_version
   instance_class = var.instance_class
-  allocated_storage = 20
-  skip_final_snapshot = true
-  publicly_accessible = false
+  allocated_storage = var.allocated_storage
+  skip_final_snapshot = var.skip_final_snapshot
+  publicly_accessible = var.publicly_accessible
+  backup_retention_period = var.backup_retention_period
+  backup_window = var.backup_window
   vpc_security_group_ids = [aws_security_group.security_group_rds.id]
   port = "5432"
   username = "postgres"

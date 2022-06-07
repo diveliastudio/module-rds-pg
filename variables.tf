@@ -20,6 +20,31 @@ variable "instance_class" {
   default = "db.t2.micro"
 }
 
+variable "allocated_storage" {
+  type = number
+  default = 20
+}
+
+variable "backup_retention_period" {
+  type = number
+  default = 7
+}
+
+variable "backup_window" {
+  type = string
+  default = "05:00-05:30"
+}
+
+variable "skip_final_snapshot" {
+  type = bool
+  default = true
+}
+
+variable "publicly_accessible" {
+  type = bool
+  default = false
+}
+
 variable "length_password" {
   type = number
   default = 16
